@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="stylesheet" href="src/game-of-lengths.css" />
+    <script
+      src="https://kit.fontawesome.com/f5a245887a.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="nav-bar">
+      <a class="contact">say hi</a>
+      <a class="projects">projects</a>
+    </div>
+    <div class="project-hero-wrapper">
+      <div class="project-title">
+        <h1>Game of Lengths</h1>
+      </div>
+      <div class="project-description">
+        <p>
+          I designed this little game in June 2020, around the times when
+          everyone wanted to go outside and enjoy the summer in Germany but also
+          was kind of confused about the 1.5m distance. As someone with a
+          background in architecture and who still has difficulties with
+          measurements, I thought a small comparison including internet’s most
+          famous icon cats would make it easier to understand. My design was
+          later published in October issue of PAGE Magazine.
+        </p>
+      </div>
+    </div>
+    <div class="carousel">
+      <div class="carousel__track-container">
+        <ul class="carousel__track">
+          <li class="carousel__slide current-slide">
+            <img
+              class="carousel-image"
+              src="public/images/game-of-lengths/game-of-lengths-1.jpg"
+              alt=""
+            />
+          </li>
+          <li class="carousel__slide">
+            <img
+              class="carousel-image"
+              src="public/images/game-of-lengths/game-of-lengths-2.jpg"
+              alt=""
+            />
+          </li>
+          <li class="carousel__slide">
+            <img
+              class="carousel-image"
+              src="public/images/game-of-lengths/game-of-lengths-3.jpg"
+              alt=""
+            />
+          </li>
+          <li class="carousel__slide">
+            <img
+              class="carousel-image"
+              src="public/images/game-of-lengths/game-of-lengths-4.jpg"
+              alt=""
+            />
+          </li>
+          <li class="carousel__slide">
+            <img
+              class="carousel-image"
+              src="public/images/game-of-lengths/game-of-lengths-5.jpg"
+              alt=""
+            />
+          </li>
+          <li class="carousel__slide">
+            <img
+              class="carousel-image"
+              src="public/images/game-of-lengths/game-of-lengths-6.jpg"
+              alt=""
+            />
+          </li>
+          <li class="carousel__slide">
+            <img
+              class="carousel-image"
+              src="public/images/game-of-lengths/game-of-lengths-7.jpg"
+              alt=""
+            />
+          </li>
+          <li class="carousel__slide">
+            <img
+              class="carousel-image"
+              src="public/images/game-of-lengths/game-of-lengths-8.jpg"
+              alt=""
+            />
+          </li>
+          <li class="carousel__slide">
+            <img
+              class="carousel-image"
+              src="public/images/game-of-lengths/game-of-lengths-9.jpg"
+              alt=""
+            />
+          </li>
+          <li class="carousel__slide">
+            <img
+              class="carousel-image"
+              src="public/images/game-of-lengths/game-of-lengths-10.jpg"
+              alt=""
+            />
+          </li>
+        </ul>
+      </div>
+      <div class="carousel__button">
+        <button class="carousel__button--left">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel__button--right">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+    <script>
+      const track = document.querySelector(".carousel__track");
+      const slides = Array.from(track.children);
+      const nextButton = document.querySelector(".carousel__button--right");
+      const prevButton = document.querySelector(".carousel__button--left");
+      const slideSize = slides[0].getBoundingClientRect();
+      const slideWidth = slideSize.width;
+      const interval = 3000;
+      let index = 1;
+
+      const moveToSlide = (track, currentSlide, targetSlide) => {
+        const targetIndex = slides.indexOf(targetSlide);
+        track.style.transform = `translateX(${-100 * targetIndex}%)`;
+        currentSlide.classList.remove("current-slide");
+        targetSlide.classList.add("current-slide");
+
+        if (currentSlide === slides[0]) {
+          return (prevButton.style.visibility = "hidden");
+        } else {
+          return (prevButton.style.visibility = "visible");
+        }
+      };
+
+      //when I click left, move slides to the left
+      prevButton.addEventListener("click", (e) => {
+        const currentSlide = track.querySelector(".current-slide");
+        const prevSlide = currentSlide.previousElementSibling;
+        if (prevSlide) {
+          moveToSlide(track, currentSlide, prevSlide);
+        }
+      });
+      //when I click right, move the slides to the right
+      nextButton.addEventListener("click", (e) => {
+        const currentSlide = track.querySelector(".current-slide");
+        const nextSlide = currentSlide.nextElementSibling;
+        if (nextSlide) {
+          moveToSlide(track, currentSlide, nextSlide);
+        }
+      });
+
+      slides.style.transform = `translateX(${-slideWidth * index}px)`;
+
+      const startSlide = () => {
+        setInterval(() => {
+          index++;
+          slides.style.transform = `translateX(${-slideWidth * index}px)`;
+          slide.style.transition = ".7s";
+        }, interval);
+      };
+      startSlide();
+    </script>
+  </body>
+</html>
