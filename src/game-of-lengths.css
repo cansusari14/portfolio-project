@@ -33,9 +33,9 @@ html {
 }
 .carousel__button {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
   left: 0;
+  bottom: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -47,17 +47,24 @@ html {
   outline: none;
   background: transparent;
   cursor: pointer;
-  left: -40px;
+  width: 33%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 .carousel__button--right {
   outline: none;
   border: none;
   background: transparent;
   cursor: pointer;
-  right: -40px;
+  height: 100%;
+  width: 33%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 .carousel__button i {
-  width: 1rem;
   font-size: clamp(1rem, 3vw, 3rem);
   color: #058061;
 }

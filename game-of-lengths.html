@@ -114,7 +114,7 @@
         </ul>
       </div>
       <div class="carousel__button">
-        <button class="carousel__button--left">
+        <button class="carousel__button--left" style="visibility: hidden">
           <i class="fas fa-chevron-left"></i>
         </button>
         <button class="carousel__button--right">
@@ -129,8 +129,7 @@
       const prevButton = document.querySelector(".carousel__button--left");
       const slideSize = slides[0].getBoundingClientRect();
       const slideWidth = slideSize.width;
-      const interval = 3000;
-      let index = 1;
+      const interval = 5000;
 
       const moveToSlide = (track, currentSlide, targetSlide) => {
         const targetIndex = slides.indexOf(targetSlide);
@@ -138,10 +137,15 @@
         currentSlide.classList.remove("current-slide");
         targetSlide.classList.add("current-slide");
 
-        if (currentSlide === slides[0]) {
-          return (prevButton.style.visibility = "hidden");
+        if (targetSlide === slides[0]) {
+          prevButton.style.visibility = "hidden";
         } else {
-          return (prevButton.style.visibility = "visible");
+          prevButton.style.visibility = "visible";
+        }
+        if (targetSlide === slides[slides.length - 1]) {
+          nextButton.style.visibility = "hidden";
+        } else {
+          nextButton.style.visibility = "visible";
         }
       };
 
@@ -153,23 +157,27 @@
           moveToSlide(track, currentSlide, prevSlide);
         }
       });
-      //when I click right, move the slides to the right
-      nextButton.addEventListener("click", (e) => {
+
+      const nextSlide = (e) => {
         const currentSlide = track.querySelector(".current-slide");
         const nextSlide = currentSlide.nextElementSibling;
         if (nextSlide) {
           moveToSlide(track, currentSlide, nextSlide);
         }
-      });
-
-      slides.style.transform = `translateX(${-slideWidth * index}px)`;
+      };
+      //when I click right, move the slides to the right
+      nextButton.addEventListener("click", nextSlide);
 
       const startSlide = () => {
-        setInterval(() => {
-          index++;
-          slides.style.transform = `translateX(${-slideWidth * index}px)`;
-          slide.style.transition = ".7s";
+        const id = setInterval(() => {
+          nextSlide();
         }, interval);
+        nextButton.addEventListener("click", (e) => {
+          clearInterval(id);
+        });
+        prevButton.addEventListener("click", (e) => {
+          clearInterval(id);
+        });
       };
       startSlide();
     </script>

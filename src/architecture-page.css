@@ -3,6 +3,10 @@ html {
   color: #3f5d70;
   text-align: center;
 }
+body {
+  margin: 8px 0px;
+  margin-bottom: 0;
+}
 .cover-image {
   margin: 0 auto;
   margin-bottom: 2vw;
@@ -22,9 +26,31 @@ html {
     flex-direction: row;
     flex-wrap: wrap;
     margin-bottom: 2vw;
+    margin: 0 -1vw;
   }
   .small-image {
     width: 50%;
     object-fit: cover;
+    padding: 1vw;
+    box-sizing: border-box;
   }
+  .architecture-project-hero-wrapper {
+    margin: 8vw;
+  }
+}
+.footer {
+  background: black;
+  color: white;
+  padding: 8vw;
+}
+.footer-text {
+  text-align: left;
+  font-size: clamp(1rem, 3vw, 2rem);
+  max-width: 18rem;
+}
+.footer-social {
+  text-align: right;
+  font-size: clamp(1rem, 3vw, 2rem);
+  list-style-type: none;
+  text-decoration: underline;
 }
