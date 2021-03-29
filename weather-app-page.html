@@ -16,22 +16,60 @@
   <body>
     <div class="nav-bar">
       <a class="contact">say hi</a>
-      <a class="projects">projects</a>
+      <span onClick="openNav()" class="more">more</span>
     </div>
-    <div class="project-hero-wrapper">
-      <div class="project-title">
-        <h1>A Simple Weather App</h1>
-      </div>
-      <div class="project-description">
-        <p>
-          I wrote my first line of code when I was 25. Some time after that I
-          said hello to HTML, winked at CSS, tried to embrace JavaScript and
-          felt my brain burning with React. This is the first ever tangible app
-          that I built. Feel free to check the weather. Needless to say, no
-          matter what the weather, always be your own sunshine.
-        </p>
+    <div id="mySidenav" class="sidenav">
+      <a href="#" class="closebtn" onclick="closeNav()">less</a>
+      <div class="project-list">
+        <a href="architecture-page.html">Architectural Digestion</a>
+        <a href="game-of-lengths.html">The Game of Lengths</a>
+        <a href="weather-app-page.html">Simple Weather App</a>
+        <a href="#">The Great Auction</a>
+        <a href="index.html">About Me</a>
       </div>
     </div>
-    <div class="gif-wrapper"><img src="public/weather-app.gif" /></div>
+    <div class="main">
+      <div class="project-hero-wrapper">
+        <div class="project-title">
+          <h1>A Simple Weather App</h1>
+        </div>
+        <div class="project-description">
+          <p>
+            I wrote my first line of code when I was 25. Some time after that I
+            said hello to HTML, winked at CSS, tried to embrace JavaScript and
+            felt my brain burning with React. This is the first ever
+            <a href="https://hopeful-saha-8c39c7.netlify.app/" target="_blank"
+              >tangible app</a
+            >
+            that I built. Feel free to check the weather. Needless to say, no
+            matter what the weather, always be your own sunshine.
+          </p>
+        </div>
+        <div class="gif-wrapper"><img src="public/weather-app.gif" /></div>
+      </div>
+      <footer class="footer">
+        <div class="footer-text">
+          <p>Since you are here, feel free to check some other links.</p>
+        </div>
+        <div>
+          <ul class="footer-social">
+            <li>LinkedIn</li>
+            <li>Github</li>
+            <li>Instagram</li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+    <script>
+      /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+      function openNav() {
+        document.getElementById("mySidenav").style.height = "100%";
+      }
+
+      /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+      function closeNav() {
+        document.getElementById("mySidenav").style.height = "0";
+      }
+    </script>
   </body>
 </html>

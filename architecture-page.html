@@ -16,7 +16,17 @@
   <body>
     <div class="nav-bar">
       <a class="contact">say hi</a>
-      <a class="projects">projects</a>
+      <span onClick="openNav()" class="more">more</span>
+    </div>
+    <div id="mySidenav" class="sidenav">
+      <a href="#" class="closebtn" onclick="closeNav()">less</a>
+      <div class="project-list">
+        <a href="architecture-page.html">Architectural Digestion</a>
+        <a href="game-of-lengths.html">The Game of Lengths</a>
+        <a href="weather-app-page.html">Simple Weather App</a>
+        <a href="#">The Great Auction</a>
+        <a href="index.html">About Me</a>
+      </div>
     </div>
     <div class="architecture-project-hero-wrapper">
       <div class="project-title">
@@ -63,7 +73,7 @@
     </div>
     <footer class="footer">
       <div class="footer-text">
-        <p>Since you are here, feel free to check some other links.</p>
+        <p>Designed and coded in Berlin with love and curiosity.</p>
       </div>
       <div>
         <ul class="footer-social">
@@ -73,5 +83,16 @@
         </ul>
       </div>
     </footer>
+    <script>
+      /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+      function openNav() {
+        document.getElementById("mySidenav").style.height = "100%";
+      }
+
+      /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+      function closeNav() {
+        document.getElementById("mySidenav").style.height = "0";
+      }
+    </script>
   </body>
 </html>

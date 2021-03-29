@@ -1,5 +1,38 @@
 html {
   background-color: #dcdafb;
   color: #3f5d70;
+}
+body {
+  margin: 8px 0px 0px;
+  height: 100%;
+}
+.project-description {
   text-align: center;
+}
+.project-title {
+  text-align: center;
+}
+.main {
+  min-height: 100vh; /* will cover the 100% of viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.footer {
+  background: black;
+  color: white;
+  padding: 2vw 8vw;
+  bottom: 0;
+  max-width: 100%;
+}
+.footer-text {
+  text-align: left;
+  font-size: clamp(1rem, 3vw, 2rem);
+  max-width: 18rem;
+}
+.footer-social {
+  text-align: right;
+  font-size: clamp(1rem, 3vw, 2rem);
+  list-style-type: none;
+  text-decoration: underline;
 }

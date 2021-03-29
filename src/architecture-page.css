@@ -1,11 +1,16 @@
 html {
   background-color: #f9c9c3;
   color: #3f5d70;
-  text-align: center;
 }
 body {
   margin: 8px 0px;
   margin-bottom: 0;
+}
+.project-description {
+  text-align: center;
+}
+.project-title {
+  text-align: center;
 }
 .cover-image {
   margin: 0 auto;
@@ -14,8 +19,8 @@ body {
 }
 .small-image {
   object-fit: cover;
-  width: 100%;
   margin-bottom: 2vw;
+  width: 100%;
 }
 @media (min-width: 800px) {
   .small-images-container > * {
@@ -29,10 +34,10 @@ body {
     margin: 0 -1vw;
   }
   .small-image {
-    width: 50%;
+    box-sizing: border-box;
     object-fit: cover;
     padding: 1vw;
-    box-sizing: border-box;
+    width: 50%;
   }
   .architecture-project-hero-wrapper {
     margin: 8vw;
@@ -41,16 +46,16 @@ body {
 .footer {
   background: black;
   color: white;
-  padding: 8vw;
+  padding: 1vw 8vw;
 }
 .footer-text {
   text-align: left;
-  font-size: clamp(1rem, 3vw, 2rem);
+  font-size: clamp(1rem, 2vw, 2rem);
   max-width: 18rem;
 }
 .footer-social {
   text-align: right;
-  font-size: clamp(1rem, 3vw, 2rem);
+  font-size: clamp(1rem, 2vw, 2rem);
   list-style-type: none;
   text-decoration: underline;
 }

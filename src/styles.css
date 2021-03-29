@@ -8,39 +8,54 @@ h1 {
 .nav-bar {
   font-size: clamp(1.5rem, 2vw, 3rem);
   font-weight: 700;
-  margin: 3vw;
+  margin: 2.5vw 2vw 0;
   overflow: hidden;
 }
-img {
-  max-width: 100%;
-}
 .sidenav {
+  background-color: #111;
   height: 0;
-  width: 100%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
   left: 0;
-  background-color: #111; /* Black*/
-  overflow-y: hidden; /* Disable horizontal scroll */
-  /* padding-top: 60px;  */
-  /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  position: fixed;
+  overflow-y: hidden;
+  top: 0;
+  transition: 0.5s;
+  width: 100%;
+  z-index: 1;
+}
+.project-list {
+  padding-top: 6rem;
 }
 .sidenav a {
-  padding: 1rem;
-  text-decoration: underline;
-  font-size: clamp(2rem, 4vw, 3rem);
   color: white;
   display: block;
-  transition: 0.3s;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  padding: 1rem;
+  position: relative;
+  text-decoration: none;
+}
+.project-list a::after {
+  background: currentColor;
+  bottom: 0;
+  content: "";
+  left: 0;
+  height: 0.5rem;
+  position: absolute;
+  width: 50%;
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 250ms ease-in;
+}
+.project-list a:hover::after {
+  transform: scaleX(0.5);
 }
 .sidenav .closebtn {
   font-size: clamp(1.5rem, 2vw, 3rem);
   font-weight: 700;
-  margin: 1vw;
-  overflow: hidden;
   float: right;
+  margin: 2.5vw 2vw;
+  overflow: hidden;
 }
 .project-list {
   margin: 2vw;
@@ -48,7 +63,7 @@ img {
 .contact {
   float: left;
 }
-.projects {
+.more {
   float: right;
   cursor: pointer;
 }
@@ -76,7 +91,9 @@ img {
     padding: 0vw 2vw 0vw;
   }
 }
-
+img {
+  max-width: 100%;
+}
 .background-color {
   background-color: #a150ba;
   color: white;
