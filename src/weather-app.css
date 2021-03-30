@@ -36,3 +36,6 @@ body {
   list-style-type: none;
   text-decoration: underline;
 }
+.weather-app-gif {
+  max-width: 50%;
+}
