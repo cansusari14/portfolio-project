@@ -1,6 +1,11 @@
 html {
   background-color: #058061;
   color: #ead119;
+}
+body {
+  margin: 8px 0px 0px;
+}
+.project-hero-wrapper {
   text-align: center;
 }
 .carousel {
@@ -67,4 +72,22 @@ html {
 .carousel__button i {
   font-size: clamp(1rem, 3vw, 3rem);
   color: #058061;
+}
+.footer {
+  background: black;
+  color: white;
+  padding: 2vw 8vw;
+  bottom: 0;
+  max-width: 100%;
+}
+.footer-text {
+  text-align: left;
+  font-size: clamp(1rem, 3vw, 2rem);
+  max-width: 18rem;
+}
+.footer-social {
+  text-align: right;
+  font-size: clamp(1rem, 3vw, 2rem);
+  list-style-type: none;
+  text-decoration: underline;
 }

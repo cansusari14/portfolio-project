@@ -31,13 +31,20 @@
       <div class="text-wrapper">
         <p>
           Hey! This is Cansu. Trained as an
-          <span class="background-color">architect,</span> with a special
-          interest in <span class="background-color">web design,</span> color
-          and aesthetics is what I love. Here are some of the things that I’ve
-          done before.
+          <span class="background-color-arch">architect,</span> with a special
+          interest in
+          <span class="background-color-web">web design,</span> color and
+          aesthetics is what I love. Here are some of the things that I’ve done
+          before.
         </p>
       </div>
       <div class="gif-wrapper"><img src="public/giphy.gif" /></div>
+      <div class="gif-wrapper-2" style="display: none">
+        <img src="public/giphy-2.gif" />
+      </div>
+      <div class="gif-wrapper-3" style="display: none">
+        <img src="public/giphy-3.gif" />
+      </div>
     </div>
 
     <script>
@@ -50,6 +57,40 @@
       function closeNav() {
         document.getElementById("mySidenav").style.height = "0";
       }
+
+      let word = document.querySelector(".background-color-arch");
+      let wordWeb = document.querySelector(".background-color-web");
+      let gifHello = document.querySelector(".gif-wrapper");
+      let gif = document.querySelector(".gif-wrapper-2");
+      let gifWeb = document.querySelector(".gif-wrapper-3");
+
+      function displayGif() {
+        gif.style.display = "flex";
+        gif.style.alignitems = "center";
+        gif.style.justifycontent = "center";
+        gifHello.style.display = "none";
+      }
+      function takeGif() {
+        gifHello.style.display = "flex";
+        gif.style.display = "none";
+      }
+
+      function displayWebGif() {
+        gifWeb.style.display = "flex";
+        gifWeb.style.alignItems = "center";
+        gifWeb.style.justifycontent = "center";
+        gifHello.style.display = "none";
+      }
+      function takeWebGif() {
+        gifHello.style.display = "flex";
+        gifWeb.style.display = "none";
+      }
+
+      word.addEventListener("mouseover", displayGif);
+      word.addEventListener("mouseout", takeGif);
+
+      wordWeb.addEventListener("mouseover", displayWebGif);
+      wordWeb.addEventListener("mouseout", takeWebGif);
     </script>
   </body>
 </html>

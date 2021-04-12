@@ -44,11 +44,13 @@ h1 {
   width: 50%;
 
   transform: scaleX(0);
-  transform-origin: left;
+  transform-origin: center left;
   transition: transform 250ms ease-in;
 }
 .project-list a:hover::after {
   transform: scaleX(0.5);
+  text-decoration: line-through;
+  transform-origin: center left;
 }
 .sidenav .closebtn {
   font-size: clamp(1.5rem, 2vw, 3rem);
@@ -56,6 +58,7 @@ h1 {
   float: right;
   margin: 2.5vw 2vw;
   overflow: hidden;
+  text-decoration: line-through;
 }
 .project-list {
   margin: 2vw;
@@ -94,9 +97,16 @@ h1 {
 img {
   max-width: 100%;
 }
-.background-color {
+.background-color-arch {
   background-color: #a150ba;
   color: white;
+
+  cursor: pointer;
+}
+.background-color-web {
+  background-color: #a150ba;
+  color: white;
+  cursor: pointer;
 }
 .gif-wrapper {
   align-items: center;

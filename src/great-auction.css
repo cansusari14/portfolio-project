@@ -2,3 +2,43 @@ html {
   background-color: #e54b2e;
   color: #ffc0ce;
 }
+body {
+  margin: 8px 0px;
+  margin-bottom: 0;
+}
+.project-description {
+  text-align: center;
+}
+.project-title {
+  text-align: center;
+}
+.title-stills {
+  font-size: clamp(1.5rem, 3vw, 3.3rem);
+  margin-top: 5vw;
+}
+.still-image {
+  object-fit: cover;
+  width: 100%;
+  margin-bottom: 2vw;
+}
+@media (min-width: 800px) {
+  .still-images-container > * {
+    flex-basis: 50%;
+  }
+  .still-images-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 -1vw;
+    /* margin-bottom: 2vw; */
+  }
+  .still-image {
+    box-sizing: border-box;
+    object-fit: cover;
+    padding: 1vw;
+    width: 50%;
+  }
+  .great-auction-hero-wrapper {
+    margin: 8vw;
+  }
+}
