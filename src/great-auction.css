@@ -37,8 +37,25 @@ body {
     object-fit: cover;
     padding: 1vw;
     width: 50%;
+    margin-bottom: 0px;
   }
   .great-auction-hero-wrapper {
     margin: 8vw;
   }
+}
+.footer {
+  background: black;
+  color: white;
+  padding: 1vw 8vw;
+}
+.footer-text {
+  text-align: left;
+  font-size: clamp(1rem, 2vw, 2rem);
+  max-width: 18rem;
+}
+.footer-social {
+  text-align: right;
+  font-size: clamp(1rem, 2vw, 2rem);
+  list-style-type: none;
+  text-decoration: underline;
 }
