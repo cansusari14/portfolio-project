@@ -1,7 +1,12 @@
 html {
   font-family: Roboto;
   font-size: 12px;
+  scroll-behavior: smooth;
 }
+body {
+  margin: 0;
+}
+
 h1 {
   font-size: clamp(2rem, 4vw, 4rem);
 }
@@ -10,6 +15,7 @@ h1 {
   font-weight: 700;
   margin: 2.5vw 2vw 0;
   overflow: hidden;
+  clip: rect(auto, auto, auto, auto);
 }
 .sidenav {
   background-color: #111;
@@ -64,11 +70,21 @@ h1 {
   margin: 2vw;
 }
 .contact {
-  float: left;
+  cursor: pointer;
+  position: fixed;
+  top: 2.5vw;
+  left: 2vw;
 }
 .more {
-  float: right;
   cursor: pointer;
+  position: fixed;
+  top: 2.5vw;
+  right: 2vw;
+}
+
+.intro-wrapper {
+  /* margin-bottom: 6rem; */
+  height: 100vh;
 }
 .text-wrapper {
   align-items: center;
@@ -78,7 +94,7 @@ h1 {
   line-height: 130%;
   justify-content: center;
   padding: 3rem;
-  padding-bottom: 6rem;
+  padding-bottom: 3rem;
 }
 @media (min-width: 800px) {
   .intro-wrapper > * {
@@ -120,11 +136,50 @@ img {
 .project-hero-wrapper {
   margin: 8vw;
 }
+.facts-title {
+  color: white;
+  text-align: center;
+  margin: 0 24vw 6vw 24vw;
+  background-color: #a150ba;
+  font-size: clamp(2rem, 4vw, 4rem);
+}
 .facts-section {
   background: black;
   color: white;
   font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: 500;
+  padding-top: 6vw;
+}
+.seperate-facts {
+  margin-bottom: 3rem;
+}
+.text-fact p {
+  text-align: center;
+}
+@media (min-width: 800px) {
+  .seperate-facts > * {
+    flex-basis: 50%;
+  }
+  .seperate-facts {
+    display: flex;
+    flex-direction: row;
+    margin: 6vw;
+    margin-bottom: 0vw;
+  }
+  .seperate-facts.reversed {
+    flex-direction: row-reverse;
+  }
+  .text-fact {
+    padding: 0vw 2vw 0vw;
+    box-sizing: border-box;
+  }
+  .gif-about img {
+    width: 100%;
+  }
+}
+.gif-about {
+  align-items: center;
+  justify-content: center;
 }
 .text-fact {
   align-items: center;
@@ -135,18 +190,4 @@ img {
   justify-content: center;
   padding: 3rem;
   padding-bottom: 6rem;
-}
-@media (min-width: 800px) {
-  .seperate-facts > * {
-    flex-basis: 50%;
-  }
-  .seperate-facts {
-    display: flex;
-    flex-direction: row;
-    margin: 6vw;
-    margin-bottom: 4vw;
-  }
-  .text-fact {
-    padding: 0vw 2vw 0vw;
-  }
 }
