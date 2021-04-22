@@ -13,9 +13,16 @@ h1 {
 .nav-bar {
   font-size: clamp(1.5rem, 2vw, 3rem);
   font-weight: 700;
-  margin: 2.5vw 2vw 0;
-  overflow: hidden;
-  clip: rect(auto, auto, auto, auto);
+  margin: 2vw 2vw;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  mix-blend-mode: difference;
+  display: flex;
+  justify-content: space-between;
+  color: white;
 }
 .sidenav {
   background-color: #111;
@@ -27,6 +34,10 @@ h1 {
   transition: 0.5s;
   width: 100%;
   z-index: 1;
+}
+.white-background {
+  background-color: white;
+  padding: 1px;
 }
 .project-list {
   padding-top: 6rem;
@@ -62,24 +73,19 @@ h1 {
   font-size: clamp(1.5rem, 2vw, 3rem);
   font-weight: 700;
   float: right;
-  margin: 2.5vw 2vw;
+  margin: 2vw 2vw;
   overflow: hidden;
   text-decoration: line-through;
+  cursor: pointer;
 }
 .project-list {
   margin: 2vw;
 }
 .contact {
   cursor: pointer;
-  position: fixed;
-  top: 2.5vw;
-  left: 2vw;
 }
 .more {
   cursor: pointer;
-  position: fixed;
-  top: 2.5vw;
-  right: 2vw;
 }
 
 .intro-wrapper {
