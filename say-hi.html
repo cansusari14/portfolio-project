@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/say-hi.css" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>Hi again!</title>
+  </head>
+  <body>
+    <div class="nav-bar">
+      <a href="index.html" class="contact">bye</a>
+      <span onClick="openNav()" class="more">more</span>
+    </div>
+    <div id="mySidenav" class="sidenav">
+      <a class="closebtn" onclick="closeNav()">less</a>
+      <div class="project-list">
+        <div><a href="architecture-page.html">Architectural Digestion</a></div>
+        <div><a href="game-of-lengths.html">The Game of Lengths</a></div>
+        <div><a href="weather-app-page.html">Simple Weather App</a></div>
+        <div><a href="great-auction.html">The Great Auction</a></div>
+        <div><a href="index.html">About Me</a></div>
+      </div>
+    </div>
+    <h1>
+      <a
+        href=""
+        class="typewrite"
+        data-period="2000"
+        data-type='[ "Hi, I am Cansu.", "I already said it before.", "I really like the typewriter effect.", "What is your horoscope?Mine is Cancer." ]'
+      >
+        <span class="wrap"></span>
+      </a>
+    </h1>
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.height = "100%";
+      }
+
+      /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+      function closeNav() {
+        document.getElementById("mySidenav").style.height = "0";
+      }
+
+      var TxtType = function (el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = "";
+        this.tick();
+        this.isDeleting = false;
+      };
+
+      TxtType.prototype.tick = function () {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+          this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+          this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) {
+          delta /= 2;
+        }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+          delta = this.period;
+          this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === "") {
+          this.isDeleting = false;
+          this.loopNum++;
+          delta = 500;
+        }
+
+        setTimeout(function () {
+          that.tick();
+        }, delta);
+      };
+
+      window.onload = function () {
+        var elements = document.getElementsByClassName("typewrite");
+        for (var i = 0; i < elements.length; i++) {
+          var toRotate = elements[i].getAttribute("data-type");
+          var period = elements[i].getAttribute("data-period");
+          if (toRotate) {
+            new TxtType(elements[i], JSON.parse(toRotate), period);
+          }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+      };
+    </script>
+  </body>
+</html>

@@ -24,6 +24,10 @@ h1 {
   right: 0;
   top: 0;
 }
+.nav-bar a {
+  text-decoration: none;
+  color: white;
+}
 .sidenav {
   background-color: #111;
   height: 0;
@@ -89,7 +93,7 @@ h1 {
 }
 
 .intro-wrapper {
-  height: 100vh;
+  height: calc(100vh - 10vw);
   margin-top: 3rem;
 }
 .text-wrapper {

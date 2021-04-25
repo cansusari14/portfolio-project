@@ -1,0 +1,12 @@
+body {
+  background-color: #b661c0;
+  color: white;
+  padding-top: 10em;
+}
+h1 {
+  text-align: center;
+}
+* {
+  color: white;
+  text-decoration: none;
+}
