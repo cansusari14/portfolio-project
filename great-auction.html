@@ -11,7 +11,7 @@
     />
     <link rel="stylesheet" href="src/styles.css" />
     <link rel="stylesheet" href="src/great-auction.css" />
-    <title>Document</title>
+    <title>The Great Auction</title>
   </head>
   <body>
     <div class="nav-bar">
@@ -19,17 +19,17 @@
       <span onClick="openNav()" class="more">more</span>
     </div>
     <div id="mySidenav" class="sidenav">
-      <a href="#" class="closebtn" onclick="closeNav()">less</a>
+      <a class="closebtn" onclick="closeNav()">less</a>
       <div class="project-list">
-        <a href="architecture-page.html">Architectural Digestion</a>
-        <a href="game-of-lengths.html">The Game of Lengths</a>
-        <a href="weather-app-page.html">Simple Weather App</a>
-        <a href="great-auction.html">The Great Auction</a>
-        <a href="index.html">About Me</a>
+        <div><a href="architecture-page.html">Architectural Digestion</a></div>
+        <div><a href="game-of-lengths.html">The Game of Lengths</a></div>
+        <div><a href="weather-app-page.html">Simple Weather App</a></div>
+        <div><a href="great-auction.html">The Great Auction</a></div>
+        <div><a href="index.html">About Me</a></div>
       </div>
     </div>
     <div class="main">
-      <div class="great-auction-hero-wrapper">
+      <div class="project-hero-wrapper">
         <div class="project-title">
           <h1>The Great Auction</h1>
         </div>
@@ -43,8 +43,16 @@
             of this precious avant-garde art?
           </p>
         </div>
-        <div class="gif-wrapper">
-          <img class="weather-app-gif" src="public/weather-app.gif" />
+        <div class="video-wrapper">
+          <video
+            width="530"
+            height="404"
+            controls
+            poster="public\The_Great_Auction_Poster.jpg"
+            autoplay
+          >
+            <source src="public/The_Great_Auction_Long.mp4" type="video/mp4" />
+          </video>
         </div>
         <div class="project-extra-titles">
           <h2 class="title-stills">Stills from The Great Auction</h2>

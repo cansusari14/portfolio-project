@@ -12,9 +12,19 @@ body {
 .project-title {
   text-align: center;
 }
+.video-wrapper {
+  text-align: center;
+}
+video {
+  height: auto;
+  max-width: 530px;
+  outline: none;
+  width: 100%;
+}
 .title-stills {
   font-size: clamp(1.5rem, 3vw, 3.3rem);
   margin-top: 5vw;
+  text-align: center;
 }
 .still-image {
   object-fit: cover;

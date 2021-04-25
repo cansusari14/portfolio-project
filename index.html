@@ -10,7 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/styles.css" />
-    <title>Document</title>
+    <title>Hi there!</title>
   </head>
   <body>
     <div class="nav-bar">
@@ -20,11 +20,11 @@
     <div id="mySidenav" class="sidenav">
       <a class="closebtn" onclick="closeNav()">less</a>
       <div class="project-list">
-        <a href="architecture-page.html">Architectural Digestion</a>
-        <a href="game-of-lengths.html">The Game of Lengths</a>
-        <a href="weather-app-page.html">Simple Weather App</a>
-        <a href="great-auction.html">The Great Auction</a>
-        <a href="#">About Me</a>
+        <div><a href="architecture-page.html">Architectural Digestion</a></div>
+        <div><a href="game-of-lengths.html">The Game of Lengths</a></div>
+        <div><a href="weather-app-page.html">Simple Weather App</a></div>
+        <div><a href="great-auction.html">The Great Auction</a></div>
+        <div><a href="#">About Me</a></div>
       </div>
     </div>
     <div class="white-background">
@@ -47,9 +47,9 @@
           <img src="public/giphy-3.gif" />
         </div>
       </div>
-      <h3 class="facts-title">A little about me</h3>
     </div>
     <div class="facts-section">
+      <h3 class="facts-title">A little about me</h3>
       <div class="seperate-facts">
         <div class="text-fact">
           <p>My hometown is Istanbul</p>
@@ -103,8 +103,8 @@
 
       function displayGif() {
         gif.style.display = "flex";
-        gif.style.alignitems = "center";
-        gif.style.justifycontent = "center";
+        gif.style.alignItems = "center";
+        gif.style.justifyContent = "center";
         gifHello.style.display = "none";
       }
       function takeGif() {
@@ -115,7 +115,7 @@
       function displayWebGif() {
         gifWeb.style.display = "flex";
         gifWeb.style.alignItems = "center";
-        gifWeb.style.justifycontent = "center";
+        gifWeb.style.justifyContent = "center";
         gifHello.style.display = "none";
       }
       function takeWebGif() {
