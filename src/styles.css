@@ -126,13 +126,14 @@ img {
 .background-color-arch {
   background-color: #a150ba;
   color: white;
-
   cursor: pointer;
+  text-decoration: underline;
 }
 .background-color-web {
   background-color: #a150ba;
   color: white;
   cursor: pointer;
+  text-decoration: underline;
 }
 .gif-wrapper {
   align-items: center;

@@ -8,6 +8,9 @@ body {
 .project-hero-wrapper {
   text-align: center;
 }
+.project-description a {
+  color: #ead119;
+}
 .carousel {
   position: relative;
   max-width: 600px;
